@@ -558,6 +558,12 @@ h1, h2, p ,h3{
         padding-top: 10px;
     }
 
+    .copyrights {
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 50px;
+    }
+
     .modal {
         padding: 0;
     }
