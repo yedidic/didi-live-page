@@ -8,3 +8,21 @@ function toggleMenu() {
     elEverywhere.classList.toggle('hide');
 }
     
+function openModal(id){
+    console.log(id,'momo');
+    var elModal = document.querySelector('.modal');
+    console.log('elModal',elModal);
+    elModal.classList.toggle('hide');
+}
+
+function closeModal(){
+    var elModal = document.querySelector('.modal');
+    console.log('elModal',elModal);
+    elModal.classList.add('hide');
+}
+
+function newMailJoin()
+{
+    //TODO: Add Mail to list.
+    closeModal();
+}

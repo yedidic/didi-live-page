@@ -12,20 +12,22 @@
     <div class="navbar-closer hide" onclick="toggleMenu()"></div>
     <header class="flex justify-center align-center">
         <div class="container flex space-between align-center">
-            <h1 class="logo">Blogin<span>.</span></h1>
+            <h1 class="logo">Blogin
+                <span>.</span>
+            </h1>
             <nav>
                 <ul id="main-menu" class="main-menu clean-list flex">
                     <li class="navbar-page">
-                        <a class="center-content" href="#" >Journal</a>
+                        <a class="center-content" href="#">Journal</a>
                     </li>
                     <li class="navbar-page active">
-                        <a class="center-content" href="#" >About</a>
+                        <a class="center-content" href="#">About</a>
                     </li>
                     <li class="navbar-page">
-                        <a class="center-content" href="#" >Work</a>
+                        <a class="center-content" href="#">Work</a>
                     </li>
                     <li class="navbar-page">
-                        <a class="center-content" href="#" >Contact</a>
+                        <a class="center-content" href="#">Contact</a>
                     </li>
                 </ul>
             </nav>
@@ -40,10 +42,9 @@
                     <h2>Duis aute irure dolor in henderit in voluptate.</h2>
                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat,
                         sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        <br><br>
-                        Duis aute irure dolor in reprehenderit
-                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
-                    <button class="btn btn-continue-read">Continue Reading </button>
+                        <br>
+                        <br> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
+                    <button class="btn btn-continue-read" onclick="openModal(1);">Continue Reading</button>
                 </div>
             </li>
             <li class="blog-item">
@@ -52,10 +53,9 @@
                     <h2>Duis aute irure dolor in henderit in voluptate.</h2>
                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat,
                         sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        <br><br>
-                        Duis aute irure dolor in reprehenderit
-                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
-                    <button class="btn btn-continue-read">Continue Reading </button>
+                        <br>
+                        <br> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
+                    <button class="btn btn-continue-read" onclick="openModal(2);">Continue Reading</button>
                 </div>
             </li>
             <li class="blog-item">
@@ -64,17 +64,17 @@
                     <h2>Duis aute irure dolor in henderit in voluptate.</h2>
                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat,
                         sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        <br><br>
-                        Duis aute irure dolor in reprehenderit
-                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
-                    <button class="btn btn-continue-read">Continue Reading </button>
+                        <br>
+                        <br> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
+                    <button class="btn btn-continue-read" onclick="openModal(3);">Continue Reading</button>
                 </div>
             </li>
         </ul>
 
         <ul class="paging-container flex space-between clean-list">
             <li>
-                <h3><span class="u2000">←</span> Previous</h3>
+                <h3>
+                    <span class="u2000">←</span> Previous</h3>
             </li>
             <li>
                 <h3>Next →</h3>
@@ -82,8 +82,12 @@
         </ul>
     </main>
     <footer class="flex column">
-        <h2 class="logo down-logo">Blogin<span>.</span></h2>
-        <p> © 2014 Blogin.com - All Rights Reserved - Find more free Templates at <span>Pixelhint.com</span></p>
+        <h2 class="logo down-logo">Blogin
+            <span>.</span>
+        </h2>
+        <p> © 2014 Blogin.com - All Rights Reserved - Find more free Templates at
+            <span>Pixelhint.com</span>
+        </p>
 
         <div class="square-btn-container flex">
             <div class="btn square-btn" alt="fb"></div>
@@ -92,6 +96,15 @@
             <div class="btn square-btn" alt="dribbble"></div>
         </div>
     </footer>
+
+    <div class="modal hide">
+        <div class="modal-content flex column center-content">
+            <!-- <span class="close" onclick="closeModal();">&times;</span> -->
+            <h2>Join us to get access to the latest stories!</h2>
+            <input type="email" name="email" id="emailJoin" placeholder="Enter your email address">
+            <button class="btn" type="submit" onclick="newMailJoin();">Submit & Close</button>
+        </div>
+    </div>
     <script src="js/main.js"></script>
 </body>
 
