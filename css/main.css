@@ -76,14 +76,12 @@ nav {
 .burger {
     display: none;
 }
-
 .navbar-closer {
     position: fixed;
     width: 100%;
     height: 100%;
     background: rgba(255, 255, 255, 0.38);
 }
-
 
 /* !!Burger NavBar */
 ul.main-menu {
@@ -102,15 +100,13 @@ ul.main-menu {
     text-shadow: 0 1px 0 #1e1e1e;
     font-size: 16px;
     font-weight: 700;
-
+    position: relative;
 }
-
 .navbar-page a{
     color: inherit;
     width: 100%;
     height: 100%;
 }
-
 .navbar-page:last-of-type {
     box-shadow: -1px 0 0 #1e1e1e , inset -1px 0 0 #1e1e1e, inset 0 -6px 0 #1e1e1e;
 }
@@ -118,13 +114,35 @@ ul.main-menu {
     box-shadow: -1px 0 0 #1d1d1d, inset 0 -6px 0 #58c93a;
     color: #58c93a;
 }
-
 .navbar-page.active{
     box-shadow: -1px 0 0 #1d1d1d, inset 0 -6px 0 #58c93a;
     color: #58c93a; 
 }
 .navbar-page:last-of-type:active {
     box-shadow: -1px 0 0 #1e1e1e , inset -1px 0 0 #1e1e1e, inset 0 -6px 0 #58c93a;
+}
+
+.journal-dates {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+    background: #292929;
+    border-top: #888 solid 1px;
+}
+.drop-down {
+    padding: 1em 10px;
+    color: #ffffff;
+    border-bottom: #888 solid 1px;
+}
+.navbar-page.active:hover::after {
+    content: '▼'
+}
+.navbar-page.active:hover .journal-dates {
+    display: flex;
+}
+.drop-down:hover {
+    background: #939292;
 }
 
 
@@ -295,6 +313,241 @@ background-color: #516fad;
 color: #ffffff;
 }
 
+
+
+/* Modal */
+
+.modal {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    font-family: lato-regular;
+}
+
+.modal-content h2, input, btn {
+    margin-bottom: 20px;
+    font-family: inherit;
+    text-align: center;
+}
+
+.modal-content input {
+    padding: 0 40px;
+    border-radius: 15px; 
+    border: 2px solid #c2c2c2;
+    height: 2.5em;
+}
+
+.modal-content .btn {
+    background: darkblue;
+    color: white;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 5px 20px;   
+    
+}
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Media Queries */
+@media (max-width: 980px)
+{
+    
+    /* main.container{
+        margin: 0 10px;
+        padding: 0;
+    } */
+    .blogs-container {
+        padding: 0 10px;
+        margin: 0;
+    }
+    
+    /* .blog-item{
+        flex: 0 0 680px;
+        
+    } */
+    
+    
+}
+
+@media (max-width: 845px)  {
+    .blog-info h2 {
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 25px;
+        letter-spacing: 0.84px;
+        padding-bottom: 10px;
+    }   
+    
+    .blog-info p {
+        font-size: 12px;
+        line-height: 16px;
+    }   
+    
+    .blog-info button {
+        height: 2.5em;
+        font-size: 12px;
+    }
+}
+
+/* Mobile Display:  */
+@media (max-width: 715px)  {
+    
+    .blog-item {
+        flex-flow: column wrap;
+    }
+    .blog-img {
+        width: 100%;
+    }
+    .blog-item {
+        width: 100%;
+    }
+    .blog-info {
+        width: 100%;
+    }
+    
+    header {
+        height: 70px;
+    }
+    .main-menu{
+        flex-direction: column;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.88);
+        border-left: 1px solid rgba(102, 102, 102, 0.5);
+        min-width: 250px;
+        transform: translate(100%, 0);
+        transition: all .8s;
+    }
+    ul.main-menu.open {
+        transform: translate(0, 0);
+    }
+    
+    .navbar-page {
+        width: 100%;
+        height: 3.5em;
+        box-shadow: inset 0 -2px 0 rgb(102, 102, 102);
+        color: rgb(102, 102, 102);
+        font-family: lato-bold;
+        letter-spacing: 0.8px;
+        font-size: 16px;
+        font-weight: 700;
+    }
+    .navbar-page a{
+        justify-content: start;
+        padding: 0 0 0 20px;
+        text-transform: uppercase;
+    }
+    
+    .navbar-page:hover {
+        background: #292929;
+        color:#ffffff; 
+    }
+    
+    .navbar-page:last-of-type {
+        box-shadow: inset 0 -2px 0 rgb(102, 102, 102);
+    }
+    
+    .navbar-page:active {
+        box-shadow: inset 0 -2px 0 #58c93a;
+        color: #58c93a;
+    }
+    
+    .navbar-page.active{
+        box-shadow: inset 0 -2px 0 #58c93a;
+        color: #58c93a; 
+        background: #292929;
+    }
+    .navbar-page:last-of-type:active {
+        box-shadow: inset 0 -2px 0 #58c93a;
+    }
+    /* Journal-Mobile */
+    .journal-dates {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        background: #292929;
+        border-top: #888 solid 1px;
+    }
+    .drop-down {
+        padding: 1em 10px;
+        color: #ffffff;
+        border-bottom: #888 solid 1px;
+    }
+    .navbar-page.active:hover::after {
+        content: ''
+    }
+    .navbar-page.active:hover .journal-dates {
+        display: flex;
+    }
+    .drop-down:hover {
+        background: #939292;
+    }
+
+    /* !!Journal Mobile */
+    
+    .burger {
+        display: block;
+        margin:0 10px 0 0;
+        background: inherit;
+        color: white;
+        /* border:none; */
+        cursor: pointer;
+        font-size: 1em;
+    }
+    
+    .blog-item:first-child {
+        padding-top: 10px;
+    }
+    
+    .copyrights {
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 50px;
+    }
+    
+    .modal {
+        padding: 0;
+    }
+    
+    .modal-content {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
 /* Helpers */
 
 .tag {
@@ -363,215 +616,3 @@ h1, h2, p ,h3{
     justify-content: center;
     align-items: center;
 }
-
-
-/* Modal */
-
-.modal {
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    font-family: lato-regular;
-}
-
-.modal-content h2, input, btn {
-    margin-bottom: 20px;
-    font-family: inherit;
-    text-align: center;
-}
-
-.modal-content input {
-    padding: 0 40px;
-    border-radius: 15px; 
-    border: 2px solid #c2c2c2;
-    height: 2.5em;
-}
-
-.modal-content .btn {
-    background: darkblue;
-    color: white;
-    border: 2px solid black;
-    border-radius: 15px;
-    padding: 5px 20px;   
-
-}
-/* The Close Button */
-.close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-
-/* Media Queries */
-@media (max-width: 980px)
-{
-
-    /* main.container{
-        margin: 0 10px;
-        padding: 0;
-    } */
-    .blogs-container {
-        padding: 0 10px;
-        margin: 0;
-    }
-    
-    /* .blog-item{
-        flex: 0 0 680px;
-
-    } */
-
-    
-}
-
-@media (max-width: 845px)  {
-    .blog-info h2 {
-        font-size: 19px;
-        font-weight: 700;
-        line-height: 25px;
-        letter-spacing: 0.84px;
-        padding-bottom: 10px;
-    }   
-
-    .blog-info p {
-        font-size: 12px;
-        line-height: 16px;
-    }   
-
-    .blog-info button {
-        height: 2.5em;
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 715px)  {
-
-    /* Mobile Display */
-    .blog-item {
-        flex-flow: column wrap;
-    }
-    .blog-img {
-        width: 100%;
-    }
-    .blog-item {
-        width: 100%;
-    }
-    .blog-info {
-        width: 100%;
-    }
-
-    header {
-        height: 70px;
-    }
-    .main-menu{
-        flex-direction: column;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        right: 0;
-        background: rgba(255, 255, 255, 0.88);
-        border-left: 1px solid rgba(102, 102, 102, 0.5);
-        min-width: 250px;
-        transform: translate(100%, 0);
-        transition: all .8s;
-    }
-    ul.main-menu.open {
-        transform: translate(0, 0);
-    }
-
-    .navbar-page {
-        width: 100%;
-        height: 3.5em;
-        box-shadow: inset 0 -2px 0 rgb(102, 102, 102);
-        color: rgb(102, 102, 102);
-        font-family: lato-bold;
-        letter-spacing: 0.8px;
-        font-size: 16px;
-        font-weight: 700;
-    }
-    .navbar-page a{
-        justify-content: start;
-        padding: 0 0 0 20px;
-        text-transform: uppercase;
-    }
-
-    .navbar-page:hover {
-        background: #292929;
-        color:#ffffff; 
-    }
-
-    .navbar-page:last-of-type {
-        box-shadow: inset 0 -2px 0 rgb(102, 102, 102);
-    }
-
-    .navbar-page:active {
-        box-shadow: inset 0 -2px 0 #58c93a;
-        color: #58c93a;
-    }
-
-    .navbar-page.active{
-        box-shadow: inset 0 -2px 0 #58c93a;
-        color: #58c93a; 
-        background: #292929;
-    
-    }
-
-    .navbar-page:last-of-type:active {
-        box-shadow: inset 0 -2px 0 #58c93a;
-    }
-
-    .burger {
-        display: block;
-        margin:0 10px 0 0;
-        background: inherit;
-        color: white;
-        /* border:none; */
-        cursor: pointer;
-        font-size: 1em;
-    }
-
-    .blog-item:first-child {
-        padding-top: 10px;
-    }
-
-    .copyrights {
-        flex-direction: column;
-        text-align: center;
-        padding-bottom: 50px;
-    }
-
-    .modal {
-        padding: 0;
-    }
-
-    .modal-content {
-        width: 100%;
-        height: 100%;
-    }
-}
-
-
