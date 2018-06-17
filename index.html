@@ -9,28 +9,28 @@
 </head>
 
 <body>
+    <div class="navbar-closer hide" onclick="toggleMenu()"></div>
     <header class="flex justify-center align-center">
         <div class="container flex space-between align-center">
-            <h1 class="logo">Blogin<span>.</span>
-            </h1>
-            <button class="burger" onclick="toggleMenu()">☰</button>
+            <h1 class="logo">Blogin<span>.</span></h1>
             <nav>
                 <ul id="main-menu" class="main-menu clean-list flex">
-                    <li class="flex first-bar">
+                    <li class="navbar-page">
                         <a class="center-content" href="#" >Journal</a>
                     </li>
-                    <li class="flex active">
+                    <li class="navbar-page active">
                         <a class="center-content" href="#" >About</a>
                     </li>
-                    <li class="flex">
+                    <li class="navbar-page">
                         <a class="center-content" href="#" >Work</a>
                     </li>
-                    <li class="flex">
+                    <li class="navbar-page">
                         <a class="center-content" href="#" >Contact</a>
                     </li>
                 </ul>
             </nav>
         </div>
+        <button class="burger" onclick="toggleMenu()">☰</button>
     </header>
     <main class="container">
         <ul class="container blogs-container flex-wrap clean-list ">
