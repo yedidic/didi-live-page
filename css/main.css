@@ -291,7 +291,7 @@ letter-spacing: 0.39px;
 margin: 0 0 38px 0;
 }
 
-footer p span {
+footer p .url-adrs-span {
     /* Text style for "Pixelhint." */
     color: #939292;
     font-family: lato-bold;
